@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Guard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Performance Guard</h1>
+        
+        <div class="analyzer">
+            <input type="url" id="urlInput" placeholder="Digite a URL para analisar">
+            <button onclick="analyzeUrl()">Analisar</button>
+        </div>
+
+        <div id="loading" class="loading">Analisando...</div>
+
+        <div class="results">
+            <div class="metrics-cards" id="metricsCards"></div>
+            <div class="charts">
+                <div id="responseTimeChart"></div>
+                <div id="resourcesChart"></div>
+            </div>
+            <div class="detailed-metrics" id="detailedMetrics"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
