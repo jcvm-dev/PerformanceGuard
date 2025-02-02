@@ -4,27 +4,75 @@
     <title>Performance Guard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adicionar ícone de café -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Performance Guard</h1>
-        
-        <div class="analyzer">
-            <input type="url" id="urlInput" placeholder="Digite a URL para analisar">
-            <button onclick="analyzeUrl()">Analisar</button>
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="container">
+                <h1>Performance Guard</h1>
+                <p>Análise completa de performance e saúde do seu site</p>
+            </div>
         </div>
 
-        <div id="loading" class="loading">Analisando...</div>
-
-        <div class="results">
-            <div class="metrics-cards" id="metricsCards"></div>
-            <div class="charts">
-                <div id="responseTimeChart"></div>
-                <div id="resourcesChart"></div>
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Analyzer Section -->
+            <div class="analyzer">
+                <input type="url" 
+                       id="urlInput" 
+                       placeholder="Digite a URL do site (ex: https://www.google.com)"
+                       autocomplete="off"
+                       spellcheck="false">
+                <button onclick="analyzeUrl()">
+                    Analisar Site
+                </button>
             </div>
-            <div class="detailed-metrics" id="detailedMetrics"></div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading">
+                Analisando seu site...
+            </div>
+
+            <!-- Results Section -->
+            <div class="results" id="results">
+                <!-- Health Status -->
+                <div id="healthStatus"></div>
+
+                <!-- Recommendations -->
+                <div id="recommendations"></div>
+
+                <!-- Metrics Cards -->
+                <div id="metricsCards" class="metrics-cards"></div>
+
+                <!-- Charts -->
+                <div class="charts">
+                    <div class="chart-container">
+                        <div id="responseTimeChart"></div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="resourcesChart"></div>
+                    </div>
+                </div>
+
+                <!-- Detailed Metrics -->
+                <div id="detailedMetrics" class="detailed-metrics"></div>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; 2025 - Desenvolvido com <i class="fa-solid fa-mug-hot coffee-icon"></i> e dedicação por 
+                <a href="https://github.com/jeffersonmonteiro" target="_blank" class="author-link">Jefferson Monteiro</a>
+            </p>
+        </div>
+    </footer>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>

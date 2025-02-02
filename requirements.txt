@@ -3,3 +3,5 @@ requests==2.31.0
 plotly==5.18.0
 werkzeug==2.2.3
 python-dotenv==1.0.0
+beautifulsoup4
+python-whois
